@@ -1,15 +1,12 @@
 package com.craftinginterpreters.lox;
 
 import java.io.BufferedReader;
-import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Scanner;
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class Lox {
   // variable to track if an error has occured
@@ -63,7 +60,7 @@ public class Lox {
 
   // error interface
   static void error(int line, String message) { report(line, "", message); }
-  public static void report(int line, String where, String message) {
+  private static void report(int line, String where, String message) {
     System.err.println();
     hadError = true;
   }
